@@ -29,7 +29,7 @@ class TestUsers(TransactionCase):
                         "login": "mnv",
                     }
                 )
-                user.description = None
+                self.assertIsNotNone(user.description, "Test value is none.")
 
     def test_description_one_line(self):
         with self.assertRaises(ValueError) as error_catcher:
